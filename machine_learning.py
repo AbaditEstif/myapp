@@ -20,7 +20,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 
 st.title( "predicting customer behavior using machine learning algorithm")
 
-st.info('**This machine learning app classifies customers into segment A,B,C,D depending on the input features**')
+st.info('**This machine learning app predicts customers into segment A,B,C,D depending on the input features**')
 
 
 with st.expander('**Data**'):
@@ -49,16 +49,17 @@ with st.expander('**Data**'):
 	 	data=csv_data, 
 	 	file_name='my_data.csv', mime='text/csv')
 
-
+# handling missig values 
 	st.write('**Clean data**')
 
-	data['Family_Size'].fillna(data['Family_Size'].median())
-	data['Work_Experience'].fillna(data['Work_Experience'].median())
-	data['Graduated'].fillna(data['Graduated'].mode()[0])
-	data['Ever_Married'].fillna(data['Ever_Married'].mode()[0])
-	data['Profession'].fillna(data['Profession'].mode()[0])
-	data['Var_1'].fillna(data['Var_1'].mode()[0])
-	data.drop(["ID"],axis=1)
+	data['Family_Size']= data['Family_Size'].fillna(data['Family_Size'].median())
+	data['Work_Experience']= data['Work_Experience'].fillna(data['Work_Experience'].median())
+	data['Graduated']= data['Graduated'].fillna(data['Graduated'].mode()[0])
+	data['Ever_Married']= data['Ever_Married'].fillna(data['Ever_Married'].mode()[0])
+	data['Profession']= data['Profession'].fillna(data['Profession'].mode()[0])
+	data['Var_1']= data['Var_1'].fillna(data['Var_1'].mode()[0])
+	data= data.drop(columns=['ID'])
+	
 	st.write("DataFrame after filling missing values", data)
 
 	
