@@ -18,9 +18,9 @@ from sklearn import metrics
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, ConfusionMatrixDisplay
 
 
-st.title( " predicting customer behavior using machine learning algorithm")
+st.title( "predicting customer behavior using machine learning algorithm")
 
-st.info('**predicting customer behavior using machine learning algorithm**')
+st.info('**This machine learning app classifies customers into segment A,B,C,D depending on the input features**')
 
 
 with st.expander('**Data**'):
