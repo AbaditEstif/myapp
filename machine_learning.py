@@ -25,8 +25,8 @@ st.info('**predicting customer behavior using machine learning algorithm**')
 
 with st.expander('**Data**'):
 	st.write('**Raw data**')
-	train= pd.read_csv( "data\Train.csv")
-	test= pd.read_csv("data\Test.csv")
+	train= pd.read_csv( "data/Train.csv")
+	test= pd.read_csv("data/Test.csv")
 	data= pd.concat([train,test],ignore_index=True)
 	st.dataframe(data.head())
 	st.write('**Data Understanding**')
