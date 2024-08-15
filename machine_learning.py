@@ -1,5 +1,6 @@
-import streamlit as st 
+# import necessary Libraries
 
+import streamlit as st 
 import pandas as pd 
 import numpy as np 
 import plotly.express as px
@@ -22,6 +23,7 @@ st.title( "predicting customer behavior using machine learning algorithm")
 
 st.info('**This machine learning app predicts customers into segment A,B,C,D depending on the input features**')
 
+# load dataset
 
 with st.expander('**Data**'):
 	st.write('**Raw data**')
@@ -49,7 +51,8 @@ with st.expander('**Data**'):
 	 	data=csv_data, 
 	 	file_name='my_data.csv', mime='text/csv')
 
-# handling missig values 
+# handling missig values and outliers
+	
 	st.write('**Clean data**')
 
 	data['Family_Size']= data['Family_Size'].fillna(data['Family_Size'].median())
@@ -60,9 +63,8 @@ with st.expander('**Data**'):
 	data['Var_1']= data['Var_1'].fillna(data['Var_1'].mode()[0])
 	data= data.drop(columns=['ID'])
 	
-	st.write("DataFrame after filling missing values", data)
+	st.write("DataFrame after filling missing values", data.head())
 
-	
 	
 	# Remove outliers
 
@@ -87,7 +89,7 @@ with st.expander('**Data**'):
 	st.write(y_raw.head())
 
 
-
+#  Exploratory data analysis (EDA)
 
 with st.expander("**Data Visualization**"):
 	st.write('**Data Summary**')
@@ -127,7 +129,7 @@ with st.expander("**Data Visualization**"):
 
 
 
-	# Input features
+	# preparing Input features
 	with st.sidebar:
 	
     
