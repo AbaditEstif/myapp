@@ -21,7 +21,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 
 st.title( "Customer Insight Segmentation App")
 
-st.info('**This machine learning app predicts customers into segment A,B,C,D depending on the input features**')
+st.info('**This app predicts customer segments using a Random Forest Classifier, a powerful machine learning algorithm**')
 
 # load dataset
 
