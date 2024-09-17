@@ -19,13 +19,13 @@ from sklearn import metrics
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, ConfusionMatrixDisplay
 
 
-st.title( "predicting customer behavior using machine learning algorithm")
+st.title( "Customer Insight Segmentation App")
 
 st.info('**This machine learning app predicts customers into segment A,B,C,D depending on the input features**')
 
 # load dataset
 
-with st.expander('**Data**'):
+with st.expander('**Data Exploration**'):
 	st.write('**Raw data**')
 	train= pd.read_csv( "data/Train.csv")
 	test= pd.read_csv("data/Test.csv")
